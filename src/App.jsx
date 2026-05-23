@@ -1,5 +1,5 @@
 import React from 'react';
-
+import saleckImg from './saleck.jpeg';
 function App() {
   // Liste des projets
   const myProjects = [
@@ -43,6 +43,18 @@ function App() {
         borderRadius: '12px',
         boxShadow: '0 4px 15px rgba(0,122,204,0.2)'
       }}>
+        <img
+        src={saleckImg}
+        alt='mon photo'
+        style={{
+          width: '130px',
+          height: '130px',
+          borderRadius: '50%',
+          objectFit: 'cover',
+          border: '4px solid #fff',
+          marginBottom: '15px',
+          boxShadow: '0 4px 10px rgba(0,0,0,0.15'
+        }}></img>
         <h1 style={{ fontSize: '2.8rem', margin: '0', fontWeight: '700', letterSpacing: '1px' }}>Salek Sidiawbeck</h1>
         <p style={{ fontSize: '1.25rem', color: '#e2e8f0', marginTop: '12px', fontWeight: '300' }}>
           Étudiant en DSI (Développement des Systèmes d'Information) | Futur Développeur Full-Stack
