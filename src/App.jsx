@@ -193,9 +193,9 @@ function App() {
             <p style={{ color: '#4a5568', marginBottom: '20px' }}>Envoyez-moi un message directement depuis ce formulaire :</p>
             
             <form 
-              action="https://formspree.io/f/xanyvwpd" // <--- تأكد من وضع رابط Formspree الخاص بك هنا مجدداً
+              action="https://formspree.io/f/xanyvwpd" // <--- تأكد من وضع رابط Formspree الخاص بك هنا
               method="POST"
-              style={{ display: 'flex', flexDirection: 'column', gap: '15px', maxWidth: '400px', margin: '0 auto' }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '15px', maxWidth: '400px', margin: '0 auto 30px auto' }}
             >
               <input type="text" name="name" placeholder="Votre Nom" required style={{ padding: '12px', borderRadius: '6px', border: '1px solid #cbd5e0', fontSize: '1rem' }} />
               <input type="email" name="email" placeholder="Votre Adresse Email" required style={{ padding: '12px', borderRadius: '6px', border: '1px solid #cbd5e0', fontSize: '1rem' }} />
@@ -204,6 +204,59 @@ function App() {
                 Envoyer le Message
               </button>
             </form>
+
+            {/* 🌐 قسم الروابط الاجتماعية والمهنية الجديد */}
+            <div style={{ borderTop: '2px solid #edf2f7', paddingTop: '20px', marginTop: '20px' }}>
+              <p style={{ color: '#718096', fontWeight: '600', marginBottom: '15px' }}>Retrouvez-moi sur :</p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
+                
+                {/* رابط جيت هاب */}
+                <a 
+                  href="https://github.com/saleck763" // <--- ضع رابط حسابك في جيت هاب هنا بدقة
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: '#1a202c',
+                    color: '#fff',
+                    borderRadius: '20px',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    fontSize: '0.9rem',
+                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                >
+                  🐙 GitHub
+                </a>
+
+                {/* رابط الواتساب للتواصل السريع */}
+                <a 
+                  href="https://wa.me/22241193520" // <--- ضع رقم هاتفك مكان الاكسات مع رمز الدولة بدون + أو أصفار (مثال: 22236XXXXXX)
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: '#25D366',
+                    color: '#fff',
+                    borderRadius: '20px',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    fontSize: '0.9rem',
+                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                >
+                  💬 WhatsApp
+                </a>
+
+              </div>
+            </div>
+
           </footer>
         )}
 
