@@ -111,13 +111,36 @@ function App() {
           </section>
         )}
 
-        {/* عرض صفحة: COMPÉTENCES */}
+   {/* عرض صفحة: COMPÉTENCES */}
         {activeTab === 'competences' && (
           <section style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
             <h2 style={{ color: '#007acc', marginTop: '0', borderBottom: '2px solid #edf2f7', paddingBottom: '10px', marginBottom: '20px' }}>🛠️ Mes Compétences</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
               {mySkills.map((skill, index) => (
-                <div key={index} style={{ padding: '15px', backgroundColor: '#f7fafc', borderRadius: '8px', borderLeft: '4px solid #3182ce' }}>
+                <div 
+                  key={index} 
+                  
+                  // تأثير الـ Hover الذكي لبطاقات المهارات
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.08)'; // تكبير خفيف جداً وأنيق
+                    e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.15)';
+                    e.currentTarget.style.backgroundColor = '#eef6fc'; // تغيير لون الخلفية قليلاً عند الوقوف عليها
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = 'none';
+                    e.currentTarget.style.backgroundColor = '#f7fafc';
+                  }}
+
+                  style={{ 
+                    padding: '15px', 
+                    backgroundColor: '#f7fafc', 
+                    borderRadius: '8px', 
+                    borderLeft: '4px solid #3182ce',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease-in-out' // حركة ناعمة وسريعة
+                  }}
+                >
                   <h4 style={{ margin: '0 0 5px 0', color: '#2b6cb0', fontSize: '1.1rem' }}>{skill.name}</h4>
                   <p style={{ margin: '0', color: '#718096', fontSize: '0.9rem' }}>{skill.level}</p>
                 </div>
@@ -126,13 +149,35 @@ function App() {
           </section>
         )}
 
-        {/* عرض صفحة: PROJETS */}
+       {/* عرض صفحة: PROJETS */}
         {activeTab === 'projets' && (
           <section style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
             <h2 style={{ color: '#007acc', marginTop: '0', borderBottom: '2px solid #edf2f7', paddingBottom: '10px', marginBottom: '25px' }}>🚀 Mes Projets Récents</h2>
             <div style={{ display: 'grid', gap: '20px' }}>
               {myProjects.map((project) => (
-                <div key={project.id} style={{ padding: '20px', backgroundColor: '#f7fafc', borderRadius: '8px', borderTop: '3px solid #007acc' }}>
+                <div 
+                  key={project.id} 
+                  
+                  // الأسطر السحرية الـ 3 القادمة هي التي ستصنع التأثير الحركي فوراً عند مرور الماوس!
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-12px)';
+                    e.currentTarget.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.02)';
+                  }}
+
+                  style={{ 
+                    padding: '20px', 
+                    backgroundColor: '#f7fafc', 
+                    borderRadius: '8px', 
+                    borderTop: '3px solid #007acc',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.02)',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease' // هنا نجعل الحركة ناعمة وانسيابية
+                  }}
+                >
                   <h3 style={{ margin: '0 0 10px 0', color: '#1a202c' }}>{project.title}</h3>
                   <p style={{ margin: '0', color: '#4a5568', lineHeight: '1.6' }}>{project.desc}</p>
                 </div>
